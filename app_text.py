@@ -13,6 +13,10 @@ st.title("Seleziona un intervallo temporale")
 start_date = st.date_input("Seleziona la data di inizio", df['DATA'].min())
 end_date = st.date_input("Seleziona la data di fine", df['DATA'].max())
 
+# Conversione delle date in formato 'DD/MM/YYYY' a oggetti datetime
+start_date = datetime.strptime(start_date_str.strftime("%d/%m/%Y"), "%d/%m/%Y")
+end_date = datetime.strptime(end_date_str.strftime("%d/%m/%Y"), "%d/%m/%Y")
+
 # Filtraggio dei dati in base all'intervallo selezionato
 filtered_data = df[(df['DATA'] >= start_date) & (df['DATA'] <= end_date)]
 
