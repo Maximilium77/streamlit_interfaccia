@@ -2,6 +2,18 @@ import streamlit as st
 import pandas as pd
 from datetime import datetime
 
+import subprocess
+
+module_name = "openpyxl"
+
+# Esegui il comando di installazione utilizzando pip
+try:
+    subprocess.check_call(["pip", "install", module_name])
+    print(f"Modulo {module_name} installato con successo.")
+except subprocess.CalledProcessError:
+    print(f"Si è verificato un errore durante l'installazione di {module_name}.")
+
+
 # Upload del file Excel
 uploaded_file = st.file_uploader("Carica un file Excel", type=["xlsx"])
 
