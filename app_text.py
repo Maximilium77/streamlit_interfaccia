@@ -23,7 +23,7 @@ if uploaded_file is not None:
 
 
 # Creazione di dati di esempio
-data = pd.date_range(start="2023-01-01", end="2023-12-31", freq="D")
+data = pd.date_range(start="2023-01-01", end="2023-01-31", freq="D")
 df = pd.DataFrame({"DATA": data, "VALORE": range(len(data))})
 
 # Titolo dell'app
